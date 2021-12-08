@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search - Petzplorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/model.js" defer></script>
+    <script src="js/controller.js" defer></script>
+    <script src="js/searchController.js" defer></script>
+</head>
+
+<body>
+    <span class="header">
+        <span class="page-info">
+            <h1 class="page-title">Hority</h1>
+            <h2 class="page-description">A <a class="anchor" href="https://www.hosky.io/"
+                    target="_blank" rel="noopener">Hosky</a> rarity checker</h2>
+            <h3 class="powered-by">powered by <a class="anchor" href="https://pool.pm"
+                target="_blank" rel="noopener">pool.pm</a></h3>
+        </span>
+    </span>
+    <div id="tool-options">
+        <div class="ib" id="image-source-container">
+            <label class="option-label" id="image-source-label">Image Source</label>
+            <input type="radio" id="ipfs.io" name="image-source" value="ipfs.io">
+            <label for="ipfs.io">ipfs.io</label>
+            <input type="radio" id="blockfrost.io" name="image-source" value="blockfrost.io" checked>
+            <label for="blockfrost.io">blockfrost.io</label>
+        </div>
+    </div>
+    <div id="search-container">
+        <label class="radio-label" id="wallet-address-label">Wallet Address</label>
+        <input type="text" class="search-bar">
+    </div>
+    <label class="label" id="search-error-label"></label>
+    <div id="pet-listing"></div>
+    <div id="pet-modal" class="modal">
+        <div id="pet-modal-content" class="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+
+</html>

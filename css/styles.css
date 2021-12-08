@@ -1,0 +1,157 @@
+/* Default */
+
+body {
+    background-color: #263341;
+    color: white;
+    font-family: sans-serif;
+    margin: 25px 50px 50px 50px;
+}
+
+a {
+    color: lightpink;
+    text-decoration: none;
+}
+
+a:visited {
+    color: palevioletred;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Classes */
+
+.label {
+    margin: 0 10px;
+    font-size: 1.75rem;
+    color: white;
+}
+
+.option-label {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    display: block;
+}
+
+.active {
+    color: white;
+}
+
+.search-bar {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+.page-info {
+    display: inline;
+    text-align: center;
+}
+
+.navigation-element {
+    display: inline;
+    margin: 0 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navigation-element:visited {
+    color: white;
+}
+
+.page-title {
+    margin: 0;
+}
+
+.page-description {
+    font-size: 1rem;
+    margin: 10 auto;
+}
+
+.powered-by {
+    font-size: 0.75rem;
+    margin: 10 auto;
+    text-align: right;
+}
+
+.pet-details {
+    background-color: red;
+}
+
+.rounded-rectangle {
+    border-radius: 10px;
+    background: #73AD21;
+    padding: 10px;
+}
+
+.modal-label {
+    font-size: 1.75rem;
+    color: black;
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+
+.dark-anchor {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+.dark-anchor:visited {
+    color: #551A8B;
+}
+
+.dark-anchor:hover {
+    text-decoration: underline;
+}
+
+/* inline-block */
+.ib {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* IDs */
+
+#search-container {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+#detailed-info-container {
+    display: inline-block;
+    margin: 20px;
+}
+
+#tool-options {
+    display: block;
+    text-align: center;
+}
+
+#search-error-label {
+    font-size: 1.25rem;
+    display: none;
+}
+
+#result-number-label {
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#filter-container {
+    text-align: center;
+}
+
+#sort-filter-container {
+    margin: 10px 20px;
+}
+
+#wallet-address-label {
+    font-size: 1.75rem;
+}
