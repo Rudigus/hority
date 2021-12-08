@@ -155,3 +155,15 @@ a:hover {
 #wallet-address-label {
     font-size: 1.75rem;
 }
+
+#tip-jar-label {
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+}
+
+#tip-jar-address {
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
