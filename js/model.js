@@ -12,8 +12,8 @@ function loadAssets(walletAddress, callback) {
     xhr.send();
 }
 
-function getHoskyRarity(hoskyNumber, callback) {
-    var url = `https://tools-anywhere.herokuapp.com/https://cnft.tools/project/hosky/${hoskyNumber}`;
+function getRarityJSON(callback) {
+    var url = `https://tools-anywhere.herokuapp.com/https://cnft.tools/api/project/hosky/`;
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
         callback(xhr.response);

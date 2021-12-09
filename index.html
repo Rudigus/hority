@@ -4,9 +4,11 @@
 <head>
     <title>Search - Petzplorer</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/loader.css">
     <script src="js/model.js" defer></script>
     <script src="js/controller.js" defer></script>
     <script src="js/searchController.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -16,7 +18,8 @@
             <h2 class="page-description">A <a class="anchor" href="https://www.hosky.io/"
                     target="_blank" rel="noopener">Hosky</a> rarity checker</h2>
             <h3 class="powered-by">powered by <a class="anchor" href="https://pool.pm"
-                target="_blank" rel="noopener">pool.pm</a></h3>
+                target="_blank" rel="noopener">pool.pm</a><br>and <a class="anchor" href="https://cnft.tools"
+                target="_blank" rel="noopener">cnft.tools</a></h3>
         </span>
     </span>
     <div id="tip-jar-container">
@@ -36,13 +39,10 @@
         <label class="radio-label" id="wallet-address-label">Wallet Address</label>
         <input type="text" class="search-bar">
     </div>
+    <div id="search-loader"></div>
+    <label id="search-loader-message">Loading, please wait.</label>
     <label class="label" id="search-error-label"></label>
     <div id="pet-listing"></div>
-    <div id="pet-modal" class="modal">
-        <div id="pet-modal-content" class="modal-content">
-            <span class="close">&times;</span>
-        </div>
-    </div>
 </body>
 
 </html>

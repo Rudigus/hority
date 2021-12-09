@@ -32,7 +32,7 @@ function populateTokenListing(pets) {
         petImage.src = getPetImage(pet.metadata.image);
         petImage.loading = "lazy";
         petImage.style.maxWidth = "150px";
-        petImage.style.margin = "15px";
+        petImage.style.margin = "15px auto";
         petImage.style.display = "block";
         // Pet Name Label
         const petName = document.createElement("label");
@@ -45,22 +45,35 @@ function populateTokenListing(pets) {
         petRarityRank.style.display = "block";
         petRarityRank.style.cursor = "pointer";
         petRarityRank.style.maxWidth = "100px";
-        petRarityRank.style.margin = "15px";
+        petRarityRank.style.margin = "15px auto";
         petRarityRank.classList.add("rounded-rectangle");
+        // Pet Trait Count
+        const petTraitCount = document.createElement("label");
+        petTraitCount.innerText = `${pet["metadata"]["-----Traits-----"].length} Traits`;
+        petTraitCount.style.display = "block";
+        petTraitCount.style.cursor = "pointer";
+        petTraitCount.style.maxWidth = "100px";
+        petTraitCount.style.margin = "15px auto";
+        petTraitCount.classList.add("rounded-rectangle");
+        petTraitCount.style.backgroundColor = "blueviolet";
         // Pet Card
         const petCard = document.createElement("div");
         petCard.style.display = "inline-block";
         petCard.style.textAlign = "center";
         petCard.style.cursor = "pointer";
-        //petCard.style.backgroundColor = "red";
-        petCard.style.margin = "5px";
+        petCard.style.backgroundColor = "#131920";
+        petCard.style.borderRadius = "15px";
+        petCard.style.margin = "10px";
+        petCard.style.padding = "15px";
         petCard.appendChild(petImage);
         petCard.appendChild(petName);
         petCard.appendChild(petRarityRank);
+        petCard.append(petTraitCount);
         petCard.petInfo = pet;
-        petCard.addEventListener("click", function (event) {
+        petCard.addEventListener("click", function () {
             window.open(`https://cnft.tools/hosky/${pet.name}`, '_blank').focus();
         });
         petListing.appendChild(petCard);
     });
+    hideSearchLoader();
 }

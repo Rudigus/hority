@@ -167,3 +167,12 @@ a:hover {
     text-align: center;
     margin: 10px;
 }
+
+#pet-listing {
+    text-align: center;
+}
+
+#search-loader-message {
+    font-size: 1.25rem;
+    display: none;
+}
