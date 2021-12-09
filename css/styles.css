@@ -163,9 +163,12 @@ a:hover {
 }
 
 #tip-jar-address {
+    font-size: 0.75rem;
     display: block;
     text-align: center;
-    margin: 10px;
+    max-width: 75%;
+    margin: 10px auto;
+    word-wrap: break-word;
 }
 
 #pet-listing {
