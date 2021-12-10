@@ -23,7 +23,7 @@ function handleWallet(walletJSON) {
         toolsData = hoskiesTools;
         hoskies.forEach(hosky => {
             let hoskyTools = hoskiesTools.stats.find(element => element.assetName == hosky.name)
-            if (hoskyTools.rarityRank) {
+            if (hoskyTools && hoskyTools.rarityRank) {
                 hosky.rarityRank = hoskyTools.rarityRank;
             } else {
                 hosky.rarityRank = "Unavailable";
