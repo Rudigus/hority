@@ -26,6 +26,15 @@ function getPetImage(petImageURL) {
 
 function populateTokenListing(pets) {
     petListing.replaceChildren();
+    // Owned Trait Count
+    const ownedTraitCount = document.createElement("label");
+    ownedTraitCount.innerText = `${getOwnedTraitCount(pets)} Owned Traits`;
+    ownedTraitCount.style.display = "block";
+    ownedTraitCount.style.maxWidth = "200px";
+    ownedTraitCount.style.margin = "15px auto";
+    ownedTraitCount.classList.add("rounded-rectangle");
+    ownedTraitCount.style.backgroundColor = "#A52A2A";
+    petListing.appendChild(ownedTraitCount);
     pets.forEach(pet => {
         // Pet Image
         const petImage = document.createElement("img");
