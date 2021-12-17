@@ -81,6 +81,9 @@ function loadOwnedTraits(hoskies, callback) {
             ownedTraits[formattedTrait] = {};
         }
         for (let key in totalTraits.attributes[trait]) {
+            if (key == "None") {
+                continue;
+            }
             ownedTraits[formattedTrait][key] = 0;
         }
     }
