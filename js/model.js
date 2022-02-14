@@ -59,6 +59,19 @@ function formatTraitName(traitName) {
     return traitName;
 }
 
+function hasTrait(hosky, traitName) {
+    let traits = hosky["metadata"]["-----Traits-----"]
+    for (let i = 0; i < traits.length; i++) {
+        let trait = traits[i];
+        for (var key in trait) {
+            if (trait[key].toLowerCase().includes(traitName.toLowerCase())) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 function loadOwnedTraits(hoskies, callback) {
     // Resets
     for (let key in ownedTraits) {

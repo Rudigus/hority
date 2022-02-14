@@ -70,6 +70,34 @@ function populateTokenListing(pets) {
             presentTraitModal();
         });
         petListing.appendChild(showDetailedInfo);
+        // Trait Name Filter
+        const traitNameFilter = document.createElement("input");
+        traitNameFilter.type = "text";
+        traitNameFilter.placeholder = "Filter by trait name";
+        traitNameFilter.style.display = "block";
+        traitNameFilter.style.maxWidth = "200px";
+        traitNameFilter.classList.add("search-bar");
+        traitNameFilter.addEventListener("input", function () {
+            pets.forEach(pet => {
+                let petHasTrait = hasTrait(pet, traitNameFilter.value);
+                if (petHasTrait) {
+                    for (var i = 0; i < petListing.children.length; i++) {
+                        let petCard = petListing.children[i];
+                        if (petCard.petInfo == pet) {
+                            petCard.style.display = "inline-block";
+                        }
+                    }
+                } else {
+                    for (var i = 0; i < petListing.children.length; i++) {
+                        let petCard = petListing.children[i];
+                        if (petCard.petInfo == pet) {
+                            petCard.style.display = "none";
+                        }
+                    }
+                }
+            })
+        });
+        petListing.appendChild(traitNameFilter);
     });
     pets.forEach(pet => {
         // Pet Image
