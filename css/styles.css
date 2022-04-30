@@ -179,3 +179,9 @@ a:hover {
     font-size: 1.25rem;
     display: none;
 }
+
+#reload-images-button {
+    display: block;
+    margin: 15px auto 0;
+    padding: 5px 10px;
+}

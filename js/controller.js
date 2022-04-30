@@ -1,11 +1,13 @@
 const petListing = document.getElementById("pet-listing");
 const imageSources = document.getElementById("image-source-container").children;
+const reloadImagesButton = document.getElementById("reload-images-button");
 const modal = document.getElementById("pet-modal");
 const modalContent = document.getElementById("pet-modal-content");
 const span = document.getElementsByClassName("close")[0];
 var imageSource;
 
 setupModal();
+setupButton();
 
 function setupModal() {
     span.onclick = function () {
@@ -26,6 +28,10 @@ function setupModal() {
     }
 }
 
+function setupButton() {
+    reloadImagesButton.addEventListener("click", reloadImages);
+}
+
 function setImageSource() {
     for (var i = 0; i < imageSources.length; i++) {
         if (imageSources[i].checked) {
@@ -43,6 +49,19 @@ function getPetImage(petImageURL) {
         hostname = "https://ipfs.blockfrost.dev/ipfs/";
     }
     return hostname + petImageURL.substr(7);
+}
+
+function reloadImages() {
+    for (var i = 0; i < petListing.children.length; i++) {
+        let child = petListing.children[i];
+        if (!child.petInfo || child.style.display == "none") {
+            continue;
+        }
+        let image = child.getElementsByTagName("img").item(0);
+        if (image.complete && image.naturalHeight === 0) {
+            image.src = `${image.src}#${new Date().getTime()}`;
+        }
+    }
 }
 
 function populateTokenListing(pets) {
