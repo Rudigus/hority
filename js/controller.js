@@ -1,13 +1,16 @@
 const petListing = document.getElementById("pet-listing");
 const imageSources = document.getElementById("image-source-container").children;
 const reloadImagesButton = document.getElementById("reload-images-button");
+const toggleMinimalistModeButton = document.getElementById("toggle-minimalist-mode-button");
 const modal = document.getElementById("pet-modal");
 const modalContent = document.getElementById("pet-modal-content");
 const span = document.getElementsByClassName("close")[0];
 var imageSource;
+var minimalistMode = false;
 
 setupModal();
-setupButton();
+setupReloadImagesButton();
+setupChangeViewButton();
 
 function setupModal() {
     span.onclick = function () {
@@ -28,8 +31,12 @@ function setupModal() {
     }
 }
 
-function setupButton() {
+function setupReloadImagesButton() {
     reloadImagesButton.addEventListener("click", reloadImages);
+}
+
+function setupChangeViewButton() {
+    toggleMinimalistModeButton.addEventListener("click", changeView);
 }
 
 function setImageSource() {
@@ -61,6 +68,26 @@ function reloadImages() {
         if (image.complete && image.naturalHeight === 0) {
             image.src = `${image.src}#${new Date().getTime()}`;
         }
+    }
+}
+
+function changeView() {
+    minimalistMode = !minimalistMode;
+    petListing.style.maxWidth = minimalistMode ? "50%" : "initial";
+    for (var i = 0; i < petListing.children.length; i++) {
+        let child = petListing.children[i];
+        if (!child.petInfo || child.style.display == "none") {
+            continue;
+        }
+        child.style.backgroundColor = minimalistMode ? "transparent" : "#131920";
+        child.style.margin = minimalistMode ? "0" : "10px";
+        child.style.padding = minimalistMode ? "0" : "15px";
+        let grandchildren = Array.from(child.children);
+        let image = grandchildren.shift();
+        image.style.margin = minimalistMode ? "0" : "15px auto";
+        grandchildren.forEach( grandchild => {
+            grandchild.style.display = minimalistMode ? "none" : "block";
+        })
     }
 }
 
